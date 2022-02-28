@@ -13,6 +13,7 @@ module.exports = () => {
         try {
             // login 전략
             // 1. email 검사
+            // findOne - sql 문법 대신 사용
             const user = await User.findOne({
                 where: { email }  // email: email을 es6 문법으로 줄였다.
             });

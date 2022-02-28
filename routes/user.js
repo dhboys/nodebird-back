@@ -58,8 +58,9 @@ router.post('/login', (req, res, next) => {
   })(req, res, next);
 }); // POST /user/login
 
-// 로그아웃 전략 실행
+// 로그아웃 실행
 router.post('/user/logout', (req, res) => {
+  // session 연결 해제 필요
   req.logout();
   req.session.destroy();
   res.send('ok');
