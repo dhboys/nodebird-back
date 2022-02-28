@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
 });
   Hashtag.associate = (db) => {
     // 하나의 post에 여러개의 hashtag 가능하고 하나의 hashtag 또한 여러개의 post에 가능 (다대다)
+    // through 추가시켜주어야한다.
     db.Hashtag.belongsToMany(db.Post, { through: 'PostHashtag' });
   };
   return Hashtag;

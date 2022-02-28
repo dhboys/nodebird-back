@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     db.Post.belongsToMany(db.Hashtag, { through: 'PostHashtag' });
     // 좋아요(User)와 Post의 관계는 다대다 (through를 통해 중간 테이블명을 정할 수 있다.)
     db.Post.belongsToMany(db.User, { through: 'Like', as: 'Likers' });
-    // Retweet 을 위한 관계
+    // Retweet 을 위한 관계, 하나의 Post에 여러개의 tweet
     db.Post.belongsTo(db.Post, { as: 'Retweet' });
   };
   return Post;

@@ -12,6 +12,7 @@ db.Image = require('./image')(sequelize, Sequelize);
 db.Post = require('./post')(sequelize, Sequelize);
 db.User = require('./user')(sequelize, Sequelize);
 // 반복문 돌면서 associate 실행 (관계들 연결)
+// 각각 관계들 맵핑
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
